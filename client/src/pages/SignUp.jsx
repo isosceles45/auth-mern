@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { set } from "mongoose";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
@@ -30,7 +29,6 @@ const SignUp = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(data);
       setLoading(false);
       if (data.success === false) {
         setError(true);
