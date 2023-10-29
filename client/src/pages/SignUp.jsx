@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import OAuth from "../components/OAuth";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
@@ -72,6 +73,7 @@ const SignUp = () => {
         >
           {loading ? "Loading..." : "Sign Up"}
         </button>
+        <OAuth />
       </form>
       <div className="flex justify-between py-3 px-1">
         <p>Have an account?</p>
@@ -79,7 +81,9 @@ const SignUp = () => {
           <span className="text-blue-600">Sign In</span>
         </Link>
       </div>
-      <p className="px-1 font-normal text-red-600">{error && "Something went wrong. Try again!"}</p>
+      <p className="px-1 font-normal text-red-600">
+        {error && "Something went wrong. Try again!"}
+      </p>
     </div>
   );
 };
